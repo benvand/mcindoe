@@ -4,29 +4,29 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 # Create your models here.
 
-class Post(models.Model):
+class Picture(models.Model):
     title =             models.CharField(max_length=255)
-    content =           models.TextField() 
-    picture =           models.ImageField(upload_to='blog/static/post_pics')
+    picture =           models.ImageField(upload_to='gallery/static/pics')
+    description =       models.TextField() 
     created =           models.TimeField(auto_now_add=True)
     modified =          models.TimeField(auto_now=True)
-    userid =            models.ForeignKey(User, related_name='userblogpost')
+    userid =            models.ForeignKey(User, related_name='usergallerypicture')
 
     class Meta():
         ordering = ('created',)
         get_latest_by = ('created',)
-        verbose_name = 'Blog Post'
-        verbose_name_plural = 'Blog Posts'
+        verbose_name = 'Gallery Picture'
+        verbose_name_plural = 'Gallery Pictures'
 
 class Comment(models.Model):
     content =           models.TextField() 
     created =           models.TimeField(auto_now_add=True)
     modified =          models.TimeField(auto_now=True)
-    userid =            models.ForeignKey(User, related_name='userblogcomment')
-    postid =            models.ForeignKey('Post')
+    userid =            models.ForeignKey(User, related_name='usergallerycomment')
+    postid =            models.ForeignKey('Picture')
 
     class Meta():
-        ordering = ('created',)
+        ordering = ('modified',)
         get_latest_by = ('created',)
-        verbose_name = 'Blog Comment'
-        verbose_name_plural = 'Blog Comments'
+        verbose_name = 'Gallery Pic Comment'
+        verbose_name_plural = 'Gallery Pic Comments'

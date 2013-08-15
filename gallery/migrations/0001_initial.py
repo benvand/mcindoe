@@ -8,36 +8,36 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'Post'
-        db.create_table(u'blog_post', (
+        # Adding model 'Picture'
+        db.create_table(u'gallery_picture', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('content', self.gf('django.db.models.fields.TextField')()),
             ('picture', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
+            ('description', self.gf('django.db.models.fields.TextField')()),
             ('created', self.gf('django.db.models.fields.TimeField')(auto_now_add=True, blank=True)),
             ('modified', self.gf('django.db.models.fields.TimeField')(auto_now=True, blank=True)),
-            ('userid', self.gf('django.db.models.fields.related.ForeignKey')(related_name='userblogpost', to=orm['auth.User'])),
+            ('userid', self.gf('django.db.models.fields.related.ForeignKey')(related_name='usergallerypicture', to=orm['auth.User'])),
         ))
-        db.send_create_signal(u'blog', ['Post'])
+        db.send_create_signal(u'gallery', ['Picture'])
 
         # Adding model 'Comment'
-        db.create_table(u'blog_comment', (
+        db.create_table(u'gallery_comment', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('content', self.gf('django.db.models.fields.TextField')()),
             ('created', self.gf('django.db.models.fields.TimeField')(auto_now_add=True, blank=True)),
             ('modified', self.gf('django.db.models.fields.TimeField')(auto_now=True, blank=True)),
-            ('userid', self.gf('django.db.models.fields.related.ForeignKey')(related_name='userblogcomment', to=orm['auth.User'])),
-            ('postid', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['blog.Post'])),
+            ('userid', self.gf('django.db.models.fields.related.ForeignKey')(related_name='usergallerycomment', to=orm['auth.User'])),
+            ('postid', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['gallery.Picture'])),
         ))
-        db.send_create_signal(u'blog', ['Comment'])
+        db.send_create_signal(u'gallery', ['Comment'])
 
 
     def backwards(self, orm):
-        # Deleting model 'Post'
-        db.delete_table(u'blog_post')
+        # Deleting model 'Picture'
+        db.delete_table(u'gallery_picture')
 
         # Deleting model 'Comment'
-        db.delete_table(u'blog_comment')
+        db.delete_table(u'gallery_comment')
 
 
     models = {
@@ -70,32 +70,32 @@ class Migration(SchemaMigration):
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
         },
-        u'blog.comment': {
-            'Meta': {'ordering': "('created',)", 'object_name': 'Comment'},
-            'content': ('django.db.models.fields.TextField', [], {}),
-            'created': ('django.db.models.fields.TimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'modified': ('django.db.models.fields.TimeField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'postid': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['blog.Post']"}),
-            'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'userblogcomment'", 'to': u"orm['auth.User']"})
-        },
-        u'blog.post': {
-            'Meta': {'ordering': "('created',)", 'object_name': 'Post'},
-            'content': ('django.db.models.fields.TextField', [], {}),
-            'created': ('django.db.models.fields.TimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'modified': ('django.db.models.fields.TimeField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'userblogpost'", 'to': u"orm['auth.User']"})
-        },
         u'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
             'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+        },
+        u'gallery.comment': {
+            'Meta': {'ordering': "('modified',)", 'object_name': 'Comment'},
+            'content': ('django.db.models.fields.TextField', [], {}),
+            'created': ('django.db.models.fields.TimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'modified': ('django.db.models.fields.TimeField', [], {'auto_now': 'True', 'blank': 'True'}),
+            'postid': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['gallery.Picture']"}),
+            'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'usergallerycomment'", 'to': u"orm['auth.User']"})
+        },
+        u'gallery.picture': {
+            'Meta': {'ordering': "('created',)", 'object_name': 'Picture'},
+            'created': ('django.db.models.fields.TimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
+            'description': ('django.db.models.fields.TextField', [], {}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'modified': ('django.db.models.fields.TimeField', [], {'auto_now': 'True', 'blank': 'True'}),
+            'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'usergallerypicture'", 'to': u"orm['auth.User']"})
         }
     }
 
-    complete_apps = ['blog']
+    complete_apps = ['gallery']
