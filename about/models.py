@@ -5,12 +5,12 @@ from django.contrib.sites.models import Site
 
 
 class AboutOptions(models.Model):
-    site = models.ForeignKey(Site)
+    site = models.OneToOneField(Site)
     name = models.CharField(max_length=200,blank=True)
     intro = models.TextField(max_length=1000,blank=True)
     maintext = models.TextField(max_length=1000,blank=True)
     outro = models.TextField(max_length=1000,blank=True)
-    backgroundImage = models.ImageField(upload_to='static')
+    backgroundImage = models.ImageField(upload_to='static', blank=True)
 
     class Meta:
         verbose_name = 'About Page Options'

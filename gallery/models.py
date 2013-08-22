@@ -1,13 +1,14 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.contrib.sites.models import Site
 #User class is:
 User = get_user_model()
 # Create your models here.
 
 class Picture(models.Model):
-    title =             models.CharField(max_length=255)
+    title =             models.CharField(max_length=255, blank=True)
     picture =           models.ImageField(upload_to='gallery/static/pics')
-    description =       models.TextField() 
+    description =       models.TextField(blank=True) 
     created =           models.TimeField(auto_now_add=True)
     modified =          models.TimeField(auto_now=True)
     userid =            models.ForeignKey(User, related_name='usergallerypicture')
@@ -28,5 +29,14 @@ class Comment(models.Model):
     class Meta():
         ordering = ('modified',)
         get_latest_by = ('created',)
-        verbose_name = 'Gallery Pic Comment'
-        verbose_name_plural = 'Gallery Pic Comments'
+        verbose_name = 'Gallery Comment'
+        verbose_name_plural = 'Gallery Comments'
+
+
+class GalleryOptions(models.Model):
+    site = models.OneToOneField(Site)
+    backgroundImage = models.ImageField(upload_to='static', blank=True)
+
+    class Meta:
+        verbose_name = 'Gallery Page Options'
+        verbose_name_plural = 'Gallery Page Options'
