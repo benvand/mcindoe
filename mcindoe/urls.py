@@ -1,8 +1,14 @@
 from django.conf.urls import patterns, include, url
-
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+# Apps
+from contact import views as contactviews
+from django.conf import settings
+
+
+
+#Admin
 
 urlpatterns = patterns('',
     # Examples:
@@ -14,10 +20,16 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^/admin/', include(admin.site.urls)),
 )
-from django.conf import settings
 
+#Stuff to serve static admin content
 urlpatterns += patterns('',
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
+
+
+
+
+
+#Apps
+urlpatterns += patterns('', url( '', include('contact.urls')))
