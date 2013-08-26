@@ -6,7 +6,7 @@ from django.shortcuts import render
 from contact.models import ContactOptions
 from django.conf import settings
 SiteName = settings.SITE_NAME
-
+ContactOptions = ContactOptions.objects.all()[0]
 # def comingSoon(request):
 #     template = loader.get_template('contact/comingsoon.html')
 #     context = RequestContext(request, {
