@@ -4,7 +4,8 @@
 #from django.template import RequestContext, loader
 from django.shortcuts import render
 from contact.models import ContactOptions
-
+from django.conf import settings
+SiteName = settings.SITE_NAME
 
 # def comingSoon(request):
 #     template = loader.get_template('contact/comingsoon.html')
@@ -18,5 +19,5 @@ from contact.models import ContactOptions
 #     return HttpResponse("Hello, world. You're at the Coming Soon page")
 
 def comingSoon(request):
-    context = {'contact_details': ContactOptions,}
+    context = {'contact_details': ContactOptions,'site_name': SiteName}
     return render(request, 'contact/comingsoon.html', context)

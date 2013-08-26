@@ -1,4 +1,9 @@
 # Django settings for mcindoe project.
+import os
+
+SITE_NAME = "MCINDOE"
+BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -70,6 +75,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -108,7 +114,7 @@ ROOT_URLCONF = 'mcindoe.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'mcindoe.wsgi.application'
 
-TEMPLATE_DIRS = (
+TEMPLATE_DIRS = ( 'static',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

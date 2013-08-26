@@ -1,22 +1,11 @@
-<!--<!DOCTYPE html>-->
+{% extends "base.html" %}
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html>
-<head>
-    {% load staticfiles %}
+{% block content %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'contact/style.css' %}" />
-    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- CDN-->
-    <script type='text/javascript' src="../../static/contact/scripts.js"></script>
-    <link type="text/javascript" src="{% static 'contact/scripts.js' %}" />
-    <link rel="shortcut icon" href="{% static 'contact/img/LlamaFavicon.png' %}" />
-    <link rel="icon" type="image/png" href="{% static 'contact/img/LlamaFavicon.png' %}" />
-    <title>McIndoe</title>
-</head>
 
-<body>
 
+<body background= "{{ contact_details.backgroundImage }}" >
 
     <div id="CenteredTitle">
         <h2 class="center_text">
@@ -27,7 +16,7 @@
                 <a href="https://www.google.com.au/?&q=maddy+mcindoe" target="_blank"><img src="../../static/contact/img/linkedin-icon.png" /></a>
                 <a href="https://www.google.com.au/?&q=maddy+mcindoe" target="_blank"><img src="../../static/contact/img/tumblr-icon.png" /></a>
             </div>
-            mcindoe
+            {{ site_name }}
         </h2>
         <h3 class="center_text">
             (coming soon)
@@ -35,6 +24,7 @@
 
     </div>
 </body>
-<!--Social media icon set from http://www.brainleaf.eu/-->
-<!--Page design BenjaminVandersteen@gmail.com Aug 2013-->
-</html>
+
+{% endblock %}
+
+
