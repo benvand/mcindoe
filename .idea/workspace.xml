@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc35f91f-4d7c-4bca-99c3-9f3947708879" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/base.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/contact/static/contact/style.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/contact/static/contact/scripts.js" afterPath="$PROJECT_DIR$/static/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact/templates/contact/comingsoon.html" afterPath="$PROJECT_DIR$/contact/templates/contact/comingsoon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcindoe/settings.py" afterPath="$PROJECT_DIR$/mcindoe/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact/views.py" afterPath="$PROJECT_DIR$/contact/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="fc35f91f-4d7c-4bca-99c3-9f3947708879" name="Default" comment="" />
     <ignored path="mcindoe.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377489591050" ignored="false" />
