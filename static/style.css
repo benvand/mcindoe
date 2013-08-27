@@ -15,7 +15,7 @@ Page should scale to browser size, especially when vh vmin vmax (viewport size) 
 
 /*Body*/
 body {
-    background: url('img/white.png') no-repeat center center fixed ;
+    background: no-repeat center center fixed ;
     background-size: cover ;
 }
 

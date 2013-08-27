@@ -13,6 +13,8 @@ class ContactOptions(models.Model):
     city = models.CharField(max_length=200,blank=True)
     postcode = models.CharField(max_length=200,blank=True)
     mapurl = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
+    tumblr = models.URLField(blank=True)
     contactsignoff = models.TextField(max_length=1000, blank=True)
     backgroundImage = models.ImageField(upload_to='static', blank=True)
 

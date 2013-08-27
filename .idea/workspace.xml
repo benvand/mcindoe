@@ -2,29 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc35f91f-4d7c-4bca-99c3-9f3947708879" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/LlamaFavicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/MirrorCentreCorrectRes(weathered).png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/MirrorCentreCorrectRes(weathered).xcf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/MirrorCentreCorrectRes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/instagram.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/linkedin-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/tumblr-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/twitter-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/img/white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/templates/contact/comingsoon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/scripts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/contact/static/contact/style.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/contact/.models.py.swp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mcindoe/urls.py" afterPath="$PROJECT_DIR$/mcindoe/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact/views.py" afterPath="$PROJECT_DIR$/contact/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base_mcindoe.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact/templates/contact/comingsoon.html" afterPath="$PROJECT_DIR$/contact/templates/contact/comingsoon.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mcindoe.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377411968965" ignored="false" />
-    <file path="/views.py" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377411485815" ignored="false" />
+    <file path="/Dummy.txt" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377578110869" ignored="false" />
+    <file path="/views.py" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377489989286" ignored="false" />
     <file path="/urls.py" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377410016380" ignored="false" />
-    <file path="/comingsoon.html" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377412653879" ignored="false" />
+    <file path="/comingsoon.html" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377579213994" ignored="false" />
+    <file path="/base.html" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377579205906" ignored="false" />
+    <file path="/settings.py" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377490893605" ignored="false" />
+    <file path="/base_mcindoe.html" changelist="fc35f91f-4d7c-4bca-99c3-9f3947708879" time="1377578254184" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,79 +34,35 @@
     <favorites_list name="mcindoe" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mcindoe/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="17" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/contact/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="4" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/contact/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/contact/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="19" column="44" selection-start="782" selection-end="782" vertical-scroll-proportion="0.3570595">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/contact/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="22" column="0" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="comingsoon.html" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/contact/templates/contact/comingsoon.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="55" selection-start="689" selection-end="689" vertical-scroll-proportion="0.27017114">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/contact/static/contact/style.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="13" selection-start="738" selection-end="738" vertical-scroll-proportion="0.30371204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comingsoon.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contact/templates/contact/comingsoon.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="1145" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base_mcindoe.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base_mcindoe.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-5.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -136,15 +83,19 @@
         <option value="$PROJECT_DIR$/mcindoe/urls.py" />
         <option value="$PROJECT_DIR$/contact/urls.py" />
         <option value="$PROJECT_DIR$/contact/views.py" />
+        <option value="$PROJECT_DIR$/mcindoe/settings.py" />
+        <option value="$PROJECT_DIR$/static/base.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/contact/templates/contact/comingsoon.html" />
+        <option value="$PROJECT_DIR$/templates/base_mcindoe.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-4" />
-    <option name="width" value="1792" />
-    <option name="height" value="1039" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -201,7 +152,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mcindoe" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -241,28 +192,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mcindoe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mcindoe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="contact" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -279,7 +208,12 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/contact/static/contact/img" />
       <recent name="$PROJECT_DIR$/contact/static/contact" />
       <recent name="$PROJECT_DIR$/contact/templates/contact" />
@@ -349,7 +283,7 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method />
@@ -383,14 +317,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1792" height="1039" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.113793105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11553344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -466,6 +400,27 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/contact/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="44" selection-start="782" selection-end="782" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact/templates/contact/comingsoon.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="55" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mcindoe/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="17" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
@@ -503,42 +458,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mcindoe/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="17" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contact/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="44" selection-start="782" selection-end="782" vertical-scroll-proportion="0.3570595">
+        <state line="30" column="1" selection-start="931" selection-end="931" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contact/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0">
+        <state line="17" column="0" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contact/static/contact/style.css">
+    <entry file="file://$PROJECT_DIR$/contact/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="17" column="32" selection-start="697" selection-end="697" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mcindoe/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="25" selection-start="4370" selection-end="4370" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="106" selection-end="106" vertical-scroll-proportion="0.050675675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base_mcindoe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="-5.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/contact/templates/contact/comingsoon.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="55" selection-start="689" selection-end="689" vertical-scroll-proportion="0.27017114">
+        <state line="0" column="0" selection-start="0" selection-end="1145" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="738" selection-end="738" vertical-scroll-proportion="0.30371204">
           <folding />
         </state>
       </provider>
