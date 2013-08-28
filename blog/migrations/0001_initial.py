@@ -13,7 +13,7 @@ class Migration(SchemaMigration):
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('content', self.gf('django.db.models.fields.TextField')()),
-            ('picture', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
+            ('picture', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
             ('created', self.gf('django.db.models.fields.TimeField')(auto_now_add=True, blank=True)),
             ('modified', self.gf('django.db.models.fields.TimeField')(auto_now=True, blank=True)),
             ('userid', self.gf('django.db.models.fields.related.ForeignKey')(related_name='userblogpost', to=orm['auth.User'])),
@@ -31,6 +31,16 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'blog', ['Comment'])
 
+        # Adding model 'BlogOptions'
+        db.create_table(u'blog_blogoptions', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('site', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['justdifferentsites.Site'], unique=True)),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
+            ('intro', self.gf('django.db.models.fields.TextField')(max_length=1000, blank=True)),
+            ('backgroundImage', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
+        ))
+        db.send_create_signal(u'blog', ['BlogOptions'])
+
 
     def backwards(self, orm):
         # Deleting model 'Post'
@@ -38,6 +48,9 @@ class Migration(SchemaMigration):
 
         # Deleting model 'Comment'
         db.delete_table(u'blog_comment')
+
+        # Deleting model 'BlogOptions'
+        db.delete_table(u'blog_blogoptions')
 
 
     models = {
@@ -70,6 +83,14 @@ class Migration(SchemaMigration):
             'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
             'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
         },
+        u'blog.blogoptions': {
+            'Meta': {'object_name': 'BlogOptions'},
+            'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'intro': ('django.db.models.fields.TextField', [], {'max_length': '1000', 'blank': 'True'}),
+            'site': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['justdifferentsites.Site']", 'unique': 'True'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'})
+        },
         u'blog.comment': {
             'Meta': {'ordering': "('created',)", 'object_name': 'Comment'},
             'content': ('django.db.models.fields.TextField', [], {}),
@@ -85,7 +106,7 @@ class Migration(SchemaMigration):
             'created': ('django.db.models.fields.TimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'modified': ('django.db.models.fields.TimeField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
+            'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'userblogpost'", 'to': u"orm['auth.User']"})
         },
@@ -95,6 +116,12 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+        },
+        u'justdifferentsites.site': {
+            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'justdifferent_site'"},
+            'domain': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         }
     }
 

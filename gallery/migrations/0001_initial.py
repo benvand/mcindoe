@@ -11,9 +11,9 @@ class Migration(SchemaMigration):
         # Adding model 'Picture'
         db.create_table(u'gallery_picture', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=255, blank=True)),
             ('picture', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
-            ('description', self.gf('django.db.models.fields.TextField')()),
+            ('description', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('created', self.gf('django.db.models.fields.TimeField')(auto_now_add=True, blank=True)),
             ('modified', self.gf('django.db.models.fields.TimeField')(auto_now=True, blank=True)),
             ('userid', self.gf('django.db.models.fields.related.ForeignKey')(related_name='usergallerypicture', to=orm['auth.User'])),
@@ -31,6 +31,14 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'gallery', ['Comment'])
 
+        # Adding model 'GalleryOptions'
+        db.create_table(u'gallery_galleryoptions', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('site', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['justdifferentsites.Site'], unique=True)),
+            ('backgroundImage', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
+        ))
+        db.send_create_signal(u'gallery', ['GalleryOptions'])
+
 
     def backwards(self, orm):
         # Deleting model 'Picture'
@@ -38,6 +46,9 @@ class Migration(SchemaMigration):
 
         # Deleting model 'Comment'
         db.delete_table(u'gallery_comment')
+
+        # Deleting model 'GalleryOptions'
+        db.delete_table(u'gallery_galleryoptions')
 
 
     models = {
@@ -86,15 +97,27 @@ class Migration(SchemaMigration):
             'postid': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['gallery.Picture']"}),
             'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'usergallerycomment'", 'to': u"orm['auth.User']"})
         },
+        u'gallery.galleryoptions': {
+            'Meta': {'object_name': 'GalleryOptions'},
+            'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'site': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['justdifferentsites.Site']", 'unique': 'True'})
+        },
         u'gallery.picture': {
             'Meta': {'ordering': "('created',)", 'object_name': 'Picture'},
             'created': ('django.db.models.fields.TimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
-            'description': ('django.db.models.fields.TextField', [], {}),
+            'description': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'modified': ('django.db.models.fields.TimeField', [], {'auto_now': 'True', 'blank': 'True'}),
             'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
             'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'usergallerypicture'", 'to': u"orm['auth.User']"})
+        },
+        u'justdifferentsites.site': {
+            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'justdifferent_site'"},
+            'domain': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
         }
     }
 

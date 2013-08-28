@@ -5,7 +5,7 @@ SITE_NAME = "MCINDOE"
 BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -124,7 +124,6 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gunicorn',
@@ -133,6 +132,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'south',
+    'justdifferentsites',
     'about',
     'blog',
     'contact',

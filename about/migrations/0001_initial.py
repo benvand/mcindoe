@@ -11,12 +11,12 @@ class Migration(SchemaMigration):
         # Adding model 'AboutOptions'
         db.create_table(u'about_aboutoptions', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('site', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['sites.Site'])),
+            ('site', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['justdifferentsites.Site'], unique=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
             ('intro', self.gf('django.db.models.fields.TextField')(max_length=1000, blank=True)),
             ('maintext', self.gf('django.db.models.fields.TextField')(max_length=1000, blank=True)),
             ('outro', self.gf('django.db.models.fields.TextField')(max_length=1000, blank=True)),
-            ('backgroundImage', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
+            ('backgroundImage', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
         ))
         db.send_create_signal(u'about', ['AboutOptions'])
 
@@ -29,16 +29,16 @@ class Migration(SchemaMigration):
     models = {
         u'about.aboutoptions': {
             'Meta': {'object_name': 'AboutOptions'},
-            'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
+            'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'intro': ('django.db.models.fields.TextField', [], {'max_length': '1000', 'blank': 'True'}),
             'maintext': ('django.db.models.fields.TextField', [], {'max_length': '1000', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
             'outro': ('django.db.models.fields.TextField', [], {'max_length': '1000', 'blank': 'True'}),
-            'site': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['sites.Site']"})
+            'site': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['justdifferentsites.Site']", 'unique': 'True'})
         },
-        u'sites.site': {
-            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'django_site'"},
+        u'justdifferentsites.site': {
+            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'justdifferent_site'"},
             'domain': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})

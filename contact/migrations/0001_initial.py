@@ -11,7 +11,7 @@ class Migration(SchemaMigration):
         # Adding model 'ContactOptions'
         db.create_table(u'contact_contactoptions', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('site', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['sites.Site'])),
+            ('site', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['justdifferentsites.Site'], unique=True)),
             ('contactmessage', self.gf('django.db.models.fields.TextField')(max_length=1000, blank=True)),
             ('addressline1', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
             ('addressline2', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
@@ -19,8 +19,10 @@ class Migration(SchemaMigration):
             ('city', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
             ('postcode', self.gf('django.db.models.fields.CharField')(max_length=200, blank=True)),
             ('mapurl', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
+            ('twitter', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
+            ('tumblr', self.gf('django.db.models.fields.URLField')(max_length=200, blank=True)),
             ('contactsignoff', self.gf('django.db.models.fields.TextField')(max_length=1000, blank=True)),
-            ('backgroundImage', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
+            ('backgroundImage', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
         ))
         db.send_create_signal(u'contact', ['ContactOptions'])
 
@@ -35,7 +37,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'ContactOptions'},
             'addressline1': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
             'addressline2': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
-            'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
+            'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'city': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
             'contactmessage': ('django.db.models.fields.TextField', [], {'max_length': '1000', 'blank': 'True'}),
             'contactsignoff': ('django.db.models.fields.TextField', [], {'max_length': '1000', 'blank': 'True'}),
@@ -43,10 +45,12 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'mapurl': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
             'postcode': ('django.db.models.fields.CharField', [], {'max_length': '200', 'blank': 'True'}),
-            'site': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['sites.Site']"})
+            'site': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['justdifferentsites.Site']", 'unique': 'True'}),
+            'tumblr': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
+            'twitter': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'})
         },
-        u'sites.site': {
-            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'django_site'"},
+        u'justdifferentsites.site': {
+            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'justdifferent_site'"},
             'domain': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
