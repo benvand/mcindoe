@@ -8,6 +8,15 @@ from django.db import router
 from justdifferentsites.models import Site
 from justdifferentsites import models as site_app
 from django.core.management.color import no_style
+from django.conf import settings
+ALLOWED_HOSTS
+SITE_NAME
+
+def getDomain_Name():
+    test = hasattr(settings,'ALLOWED_HOSTS'), hasattr(settings,'SITE_NAME')
+    return {'domain':settings.ALLOWED_HOSTS if test[0] else "example.com",
+            'name':settings.SITE_NAME if test[1] else "example.com"}
+
 
 def create_default_site(app, created_models, verbosity, db, **kwargs):
     # Only create the default sites in databases where Django created the table
@@ -18,8 +27,9 @@ def create_default_site(app, created_models, verbosity, db, **kwargs):
         # the next id will be 1, so we coerce it. See #15573 and #16353. This
         # can also crop up outside of tests - see #15346.
         if verbosity >= 2:
-            print("Creating example.com Site object")
-        Site(pk=1, domain="example.com", name="example.com").save(using=db)
+            print("Creating Initial Site object")
+        siteObjectDefaults = getDomain_Name()
+        Site(pk=1, domain=siteObjectDefaults['domain'], name=siteObjectDefaults['name']).save(using=db)
 
         # We set an explicit pk instead of relying on auto-incrementation,
         # so we need to reset the database sequence. See #17415.
