@@ -4,8 +4,8 @@ import os
 SITE_NAME = "MCINDOE"
 BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-DEBUG = True if os.uname()[1] == 'ben-virtualbox' else False
+SITE_ID = 1
+DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -126,6 +126,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
     'gunicorn',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',

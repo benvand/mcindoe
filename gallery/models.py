@@ -1,9 +1,9 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from justdifferentsites.models import Site
-#User class is:
+from django.contrib.sites.models import Site
+
 User = get_user_model()
-# Create your models here.
+
 
 class Picture(models.Model):
     title =             models.CharField(max_length=255, blank=True)

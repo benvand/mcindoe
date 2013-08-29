@@ -1,6 +1,6 @@
 from django.db import models
-from justdifferentsites.models import Site
-
+#from justdifferentsites.models import Site
+from django.contrib.sites.models import Site
 # Create your models here.
 
 

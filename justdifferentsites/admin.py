@@ -1,9 +1,5 @@
-from django.contrib import admin
-from justdifferentsites.models import Site
+from django.contrib.sites.admin import SiteAdmin
+from models import newVariables
 
 
-class SiteAdmin(admin.ModelAdmin):
-    list_display = ('domain', 'name')
-    search_fields = ('domain', 'name')
-
-admin.site.register(Site, SiteAdmin)
+SiteAdmin.list_display = SiteAdmin.list_display + tuple([i[0] for i in newVariables])

@@ -34,7 +34,7 @@ class Migration(SchemaMigration):
         # Adding model 'GalleryOptions'
         db.create_table(u'gallery_galleryoptions', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('site', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['justdifferentsites.Site'], unique=True)),
+            ('site', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['sites.Site'], unique=True)),
             ('backgroundImage', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
         ))
         db.send_create_signal(u'gallery', ['GalleryOptions'])
@@ -101,7 +101,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'GalleryOptions'},
             'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'site': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['justdifferentsites.Site']", 'unique': 'True'})
+            'site': ('django.db.models.fields.related.OneToOneField', [], {'to': u"orm['sites.Site']", 'unique': 'True'})
         },
         u'gallery.picture': {
             'Meta': {'ordering': "('created',)", 'object_name': 'Picture'},
@@ -113,11 +113,14 @@ class Migration(SchemaMigration):
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255', 'blank': 'True'}),
             'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'usergallerypicture'", 'to': u"orm['auth.User']"})
         },
-        u'justdifferentsites.site': {
-            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'justdifferent_site'"},
+        u'sites.site': {
+            'Meta': {'ordering': "('domain',)", 'object_name': 'Site', 'db_table': "'django_site'"},
+            'backgroundImage': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'domain': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
+            'tumblr': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
+            'twitter': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'})
         }
     }
 

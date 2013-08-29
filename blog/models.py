@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from justdifferentsites.models import Site
+#from justdifferentsites.models import Site
+from django.contrib.sites.models import Site
 
 #User class is:
 User = get_user_model()
