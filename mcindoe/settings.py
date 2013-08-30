@@ -5,6 +5,7 @@ SITE_NAME = "MCINDOE"
 BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
+
 DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
 TEMPLATE_DEBUG = DEBUG
 
@@ -41,7 +42,6 @@ TIME_ZONE = 'Australia/Melbourne'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
 
-SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.

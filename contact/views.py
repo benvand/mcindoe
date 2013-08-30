@@ -5,6 +5,8 @@
 from django.shortcuts import render
 from contact.models import ContactOptions
 from django.conf import settings
+from django.contrib.sites.models import get_current_site
+#Site = get_current_site()
 SiteName = settings.SITE_NAME
 #ContactOptions = ContactOptions.objects.all()[0]
 # def comingSoon(request):

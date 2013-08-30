@@ -1,6 +1,6 @@
 
 
-
+sudo find . -name "*.pyc" -exec rm -rf {} \;
 dropdb -Umcindoe mcindoe
 createdb -Umcindoe mcindoe
 python /home/ben/mcindoe/manage.py syncdb
