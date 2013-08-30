@@ -5,18 +5,18 @@
 
 {% load staticfiles %}
 
-<body background= "{{ contact_details.backgroundImage }}" >
+<body background= "{{ global_site.backgroundImage }}" >
 
     <div id="CenteredTitle">
         <h2 class="center_text">
             <div id="SocMed">
 <!--                <a href="https://twitter.com/maddymcindoe" class="twitter-follow-button" data-show-count="false" data-lang="en"><img src="static/twitter-icon.png"  /></a>-->
-                <a href="{{ contact_details.twitter }}" target="_blank"><img src="{% static "contact/img/twitter-icon.png" %}"  /></a>
+                <a href="{{ global_site.twitter }}" target="_blank"><img src="{% static "contact/img/twitter-icon.png" %}"  /></a>
 <!--               <a href="https://www.google.com.au/?&q=maddy+mcindoe" target="_blank"><img src="../../static/contact/img/instagram.png"  /></a> -->
 <!--                <a href="https://www.google.com.au/?&q=maddy+mcindoe" target="_blank"><img src="../../static/contact/img/linkedin-icon.png" /></a> -->
-                <a href="{{ contact_details.tumblr }}" target="_blank"><img src="{% static "contact/img/tumblr-icon.png" %}" /></a>
+                <a href="{{ global_site.tumblr }}" target="_blank"><img src="{% static "contact/img/tumblr-icon.png" %}" /></a>
             </div>
-            {{ site_name }}
+            {{ global_site.name }}
         </h2>
         <h3 class="center_text">
             (coming soon)
