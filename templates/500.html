@@ -1,0 +1,17 @@
+{% extends "error_page.html" %}
+
+{% load staticfiles %}
+
+{% block error %}
+
+<div id="CenteredTitle">
+    <h3 class="center_text">
+        500 Error! Don't break server or puppy will stop smiling!
+    </h3>
+    <h2 class="center_text">
+        <img src="{% static "img/puppy.jpg" %}">
+    </h2>
+
+</div>
+
+{% endblock %}
