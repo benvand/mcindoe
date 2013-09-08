@@ -6,6 +6,7 @@ BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
 
+#DEV = DEBUG = True
 DEV = DEBUG =  True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
 TEMPLATE_DEBUG = DEBUG
 
