@@ -782,7 +782,7 @@ table#change-history tbody th {
 /* HEADER */
 
 #header {
-    background: #e0c598;
+    background: #417690;
     color: #ffc;
     overflow: hidden;
 }
@@ -800,7 +800,7 @@ table#change-history tbody th {
     font-size: 18px;
     margin: 8px 0;
     font-weight: normal;
-    color: #ffffff;
+    color: #f4f379;
 }
 
 #branding h2 {

@@ -250,7 +250,7 @@
 }
 
 #changelist .actions.selected {
-    background: #ffffff;
+    background: #fffccf;
     border-top: 1px solid #fffee8;
     border-bottom: 1px solid #edecd6;
 }
