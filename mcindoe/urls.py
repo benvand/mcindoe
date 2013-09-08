@@ -29,6 +29,10 @@ urlpatterns += patterns('',
 urlpatterns += staticfiles_urlpatterns()
 
 
+#505
+handler500='mcindoe.views.fiveHundred'
+handler404='mcindoe.views.fourHundred'
+
 #comingsoon
 urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 
