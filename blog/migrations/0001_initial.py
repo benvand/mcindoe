@@ -122,6 +122,7 @@ class Migration(SchemaMigration):
             'backgroundImage1': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'backgroundImage2': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'domain': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'favicon': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'tumblr': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),

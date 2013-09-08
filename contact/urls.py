@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from contact import views
+import contact.views
 
 #App Specific
-urlpatterns = patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
+urlpatterns = patterns('', url( '^$', contact.views.contact)) #, name='contact' ))

@@ -1,12 +1,20 @@
 {% extends "base.html" %}
 
-
-{% block child %}
-
 {% load staticfiles %}
 
-<body background= "{{ contact_details.backgroundImage }}" >
+{% block header %}{% include 'header_mcindoe.html' %}{% endblock %}
 
+
+{% block sitespec %}
+<body background="{% static "img/MIRROR.png" %}">
+<link rel="stylesheet" type="text/css" href="{% static 'style_mcindoe.css' %}" />
+
+hi
+<!--foo-->
+<img src="{% static "img/MIRROR.png" %}">
+
+{% block container %}{% endblock %}
+{% block footer %}{% include 'footer_mcindoe.html' %}{% endblock %}
 </body>
-
 {% endblock %}
+

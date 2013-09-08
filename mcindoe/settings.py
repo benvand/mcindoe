@@ -6,7 +6,7 @@ BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
 
-DEBUG =  True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
+DEV = DEBUG =  True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -67,8 +67,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = '/home/ben/mcindoe/static'
-
+STATIC_ROOT = ''
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
@@ -76,17 +75,27 @@ STATIC_URL = '/static/'
 # Additional locations of static files
 STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, 'static'),
+#    '/home/ben/mcindoe/static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
+
+###################STATIC DEV#######################
+
+if DEV:
+    STATICFILES_DIRS = STATICFILES_DIRS + (os.path.join(BASE_DIR, 'static'),)
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
