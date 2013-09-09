@@ -6,8 +6,8 @@ BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
 
-#DEV = DEBUG = True
 DEV = DEBUG =  True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
+#DEV = DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -31,7 +31,7 @@ DATABASES = {
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['mcindoedesign.com','localhost*','127.0.0.*','mcindoedesign.co.uk','macindoedesign.com','macindoedesign.co.uk']
+ALLOWED_HOSTS = ['.mcindoedesign.com','localhost*','127.0.0.*','.mcindoedesign.co.uk','.macindoedesign.com','.macindoedesign.co.uk','127.0.0.1:8000','.localhost']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
