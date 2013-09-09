@@ -2,19 +2,21 @@
 
 {% load staticfiles %}
 
-{% block header %}{% include 'header_mcindoe.html' %}{% endblock %}
 
 
 {% block sitespec %}
-<body background="{% static "img/MIRROR.png" %}">
-<link rel="stylesheet" type="text/css" href="{% static 'style_mcindoe.css' %}" />
 
-hi
-<!--foo-->
-<img src="{% static "img/MIRROR.png" %}">
+<body style="background-image:url( {% static "img/wtrans.png" %} )">
 
-{% block container %}{% endblock %}
-{% block footer %}{% include 'footer_mcindoe.html' %}{% endblock %}
+    {% block header %}{% include 'header_mcindoe.html' %}{% endblock %}
+
+    <img class="center toucan" src="{% static 'img/ToucanMcindoeTransparent.png' %}" alt='title' />
+    {% include 'agcb.html' %}
+
+    {% block container %}{% endblock %}
+
+
+    {% block footer %}{% include 'footer_mcindoe.html' %}{% endblock %}
 </body>
 {% endblock %}
 

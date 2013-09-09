@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import views
-import contact.urls  as contacturls
+
 #Admin
 
 
@@ -15,13 +15,16 @@ urlpatterns = patterns('',
     # url(r'^mcindoe/', include('mcindoe.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^maddyonly/', include(admin.site.urls)),
-#    url(r'^contact/', include(contacturls)),
 )
+
+
+#admin
+
+urlpatterns += patterns('',
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^maddyonly/', include(admin.site.urls)),)
 
 #Stuff to serve static admin content
 urlpatterns += patterns('',
@@ -29,14 +32,15 @@ urlpatterns += patterns('',
 urlpatterns += staticfiles_urlpatterns()
 
 
-#505
-handler500=views.fiveHundred
-handler404=views.fourHundred
-
 #comingsoon
 urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 
 #Apps
-#urlpatterns = patterns('', url( '^contact/', contact.views.contact))
-#, name='contact' ))
+urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+# urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
+# urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+# urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
+#Error Pages
+handler500 = views.fiveHundred
+handler404 = views.fourHundred
