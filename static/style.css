@@ -132,6 +132,11 @@ div.container{
     background-color: white;
     border: 1px solid black;
     width: 804px;
+    height: auto;
+    }
+
+div.infocontainer{
     height: 45vh;
     overflow: auto;
-    }
+
+}
