@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<head>
+<script type="text/javascript" src="{% static "jquery-1.10.2.min.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery-ui-1.10.3.core.js.js" %}"></script>
+<script type="text/javascript" src="{% static "jquery.jcoverflip.js" %}"></script>
+
+
+<script>
+  $(function(){
+    $('#flip').jcoverflip();
+    });
+</script>
+</head>
+
+
+
+<ul id="flip">
+    <li><a href="..."><img ...><span class="title">My title</span></a></li>
+    <li><a href="..."><img ...><span  class="title">Another title</span></a></li>
+    ...
+  </ul>
