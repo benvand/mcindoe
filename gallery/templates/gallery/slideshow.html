@@ -24,30 +24,22 @@ images[3].src ="{% static 'img/bv-email.png' %}";
 
 
 function prev(){
-    if(picNumber == 0)
-    {
+    if(picNumber == 0){
         picNumber = 3;
-        imgHolder.src = images[picNumber].src;
-        }
-    else
-    {
+        imgHolder.src = images[picNumber].src;}
+    else{
         picNumber--;
-        imgHolder.src = images[picNumber].src;
-        }
+        imgHolder.src = images[picNumber].src;}
 }
 
 
 function next(){
-    if(picNumber == 3)
-    {
+    if(picNumber == 3){
         picNumber = 0;
-        imgHolder.src = images[picNumber].src;
-        }
-    else
-    {
+        imgHolder.src = images[picNumber].src;}
+    else{
         picNumber++;
-        imgHolder.src = images[picNumber].src;
-    }
+        imgHolder.src = images[picNumber].src;}
 }
 
 
