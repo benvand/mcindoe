@@ -4,5 +4,6 @@ from models import ContactOptions
 
 def contact(request):
    Site = get_current_site(request)
-   context = {'global_site':Site, "contact" : ContactOptions }
+   contact = ContactOptions.objects.get(site=Site)
+   context = {'global_site':Site, "contact" : contact }
    return render(request, 'contact/contact.html', context)

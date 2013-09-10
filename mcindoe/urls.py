@@ -36,10 +36,11 @@ urlpatterns += staticfiles_urlpatterns()
 urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 
 #Apps
-urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
-#urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
-# urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
-urlpatterns += patterns('', url('^about/',include('about.urls')),)
+if settings.DEV:
+    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+    # urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
+    # urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+    urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
 #Error Pages
 handler500 = views.fiveHundred

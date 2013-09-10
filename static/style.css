@@ -76,9 +76,9 @@ footer {
 
 /* Social Media Icons */
 
-.SocMed {
-    position: absolute;
-}
+/*.SocMed {*/
+    /*position: absolute;*/
+/*}*/
 
 img.socMed {
     height: 7vmin;
@@ -86,6 +86,14 @@ img.socMed {
     width: 7vmin;
     height: 7vm;
 }
+
+img.socMedVert {
+    height: 7vmin;
+    width: 7vmin;
+    width: 7vmin;
+    height: 7vm;
+}
+
 
 /* Generic Helpers */
 
@@ -123,6 +131,7 @@ div.container{
     top: -40px;
     background-color: white;
     border: 1px solid black;
-    width: 55%;
-    height: 45vh
+    width: 804px;
+    height: 45vh;
+    overflow: auto;
     }
