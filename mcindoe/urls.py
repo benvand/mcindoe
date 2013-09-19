@@ -35,6 +35,8 @@ urlpatterns += staticfiles_urlpatterns()
 #comingsoon
 urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 
+
+
 #Apps
 if settings.DEV:
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
@@ -42,6 +44,27 @@ if settings.DEV:
     urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
+
+#FastProd
+if settings.FASTPROD:
+
+    from django.views.generic import RedirectView
+    urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
+    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+    urlpatterns += patterns('', url('^blog/',include('blog.fastprod')),)
+    urlpatterns += patterns('', url('^gallery/',include('gallery.fastprod')),)
+    urlpatterns += patterns('', url('^about/',include('about.fastprod')),)
+#admin
+
+    urlpatterns += patterns('',
+        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+        url(r'^admin/', include(admin.site.urls)),
+        url(r'^maddyonly/', include(admin.site.urls)),)
+
+
+
 #Error Pages
-handler500 = views.fiveHundred
-handler404 = views.fourHundred
+if not settings.DEV:
+
+    handler500 = views.fiveHundred
+    handler404 = views.fourHundred

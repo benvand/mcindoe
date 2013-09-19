@@ -7,7 +7,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
 
 DEV = DEBUG =  True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
-#DEV = DEBUG = True
+DEV = DEBUG = True
+FASTPROD=True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -68,7 +69,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
