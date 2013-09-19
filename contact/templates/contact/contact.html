@@ -5,19 +5,40 @@
 
 
 <p>
-<h3>Here's how to get in touch</h3>
-<h4>{{ contact.contactmessage }}</h4>
-<h4>{{ contact.message }}</h4>
-<h4>{{ contact.addressline1 }}</h4>
-<h4>{{ contact.addressline2 }}</h4>
 
-<h4>{{ contact.city }}</h4>
+<h4 style="margin-left: 5px" class="center_text">
+    Hi! At the moment the site is undergoing construction and improvement...<br />
+    <br />
+    If you want to get in touch then I can be reached by in the following ways:<br />
+    <br />
+</h4>
+<h5 style="margin-left: 10px">
+    Email : maddy@mcindoedesign.com<br />
+    Phone: +44 (0) 7930 205 559<br />
+    <br />
+    Postal Address:<br />
+    <br />
+    Maddy Mcindoe<br />
+    {{ contact.addressline1 }}<br />
+    {{ contact.addressline2 }}<br />
+    {{ contact.city }}<br />
+{#    {{ contact.county }}<br />#}
+    {{ contact.postcode }}
+</h5>
 
-
-<h4>{{ contact.county }}</h4>
-<h4>{{ contact.postcode }}</h4>
-<h4>{{ contact.mapurl }}</h4>
-<h4>{{ contact.contactsignoff }}</h4>
+{#<h3>Here's how to get in touch</h3>#}
+{#<h3>{{ contact.contactmessage }}</h3>#}
+{#<h3>{{ contact.message }}</h3>#}
+{#<h3>{{ contact.addressline1 }}</h3>#}
+{#<h3>{{ contact.addressline2 }}</h3>#}
+{##}
+{#<h3>{{ contact.city }}</h3>#}
+{##}
+{##}
+{#<h3>{{ contact.county }}</h3>#}
+{#<h3>{{ contact.postcode }}</h3>#}
+{#<h3>{{ contact.mapurl }}</h3>#}
+{#<h3>{{ contact.contactsignoff }}</h3>#}
 
 
 

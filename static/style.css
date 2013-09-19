@@ -34,18 +34,37 @@ h2 {
     font-weight:normal;
     font-size: 7vm;
     font-size: 7vmin;
-    margin-top: 40vh;
+    /*margin-top: 40vh;*/
     margin-bottom: 1vh;
     position: relative;
 }
 
+h2.mid {
+    margin-bottom: 1vh;
+        }
+
 h3 {
     margin-top: 1vh;
-    text-transform:capitalize;
     font-weight:normal;
     font-size: 2.5vm;
     font-size: 2.5vmin;
 }
+
+h4 {
+    margin-top: 1vh;
+    font-weight:normal;
+    font-size: 2.2vm;
+    font-size: 2.2vmin;
+}
+
+h5 {
+    margin-top: 1vh;
+    font-weight:normal;
+    font-size: 2vm;
+    font-size: 2vmin;
+}
+
+
 
 /* Divs */
 
@@ -96,6 +115,9 @@ img.socMedVert {
 
 
 /* Generic Helpers */
+.capitalize{
+    text-transform:capitalize;
+    }
 
 .center_text{
     text-align:center;
@@ -136,7 +158,7 @@ div.container{
     }
 
 div.infocontainer{
-    height: 45vh;
+    height: 50vh;
     overflow: auto;
 
 }
