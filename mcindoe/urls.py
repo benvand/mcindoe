@@ -61,6 +61,10 @@ if settings.FASTPROD:
         url(r'^admin/', include(admin.site.urls)),
         url(r'^maddyonly/', include(admin.site.urls)),)
 
+#static 
+    urlpatterns += patterns('',
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),)
+    urlpatterns += staticfiles_urlpatterns()
 
 
 #Error Pages
