@@ -9,11 +9,11 @@ User = get_user_model()
 
 class Post(models.Model):
     title =             models.CharField(max_length=255)
-    content =           models.TextField() 
-    picture =           models.ImageField(upload_to='blog/static/post_pics', blank=True)
+    content =           models.TextField()
     created =           models.TimeField(auto_now_add=True)
     modified =          models.TimeField(auto_now=True)
     userid =            models.ForeignKey(User, related_name='userblogpost')
+    PostPicture = None
 
     class Meta():
         ordering = ('created',)
@@ -33,6 +33,11 @@ class Comment(models.Model):
         get_latest_by = ('created',)
         verbose_name = 'Blog Comment'
         verbose_name_plural = 'Blog Comments'
+
+class PostPicture(models.Model):
+    picture =           models.ImageField(upload_to='blog/static/post_pics', blank=True)
+    postid =            models.ForeignKey('Post')
+
 
 
 class BlogOptions(models.Model):
