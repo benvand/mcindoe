@@ -8,8 +8,11 @@ Page should scale to browser size, especially when vh vmin vmax (viewport size) 
 
 /*Generic*/
 * {
-    font-family: "Avantgarde";
-    font-family: "Arial";
+    /*font-family: "Avantgarde";*/
+    /*font-family: "Arial";*/
+    /*font-family: "Symbol Arial Avantgarde";*/
+    font-family: 'pt_sansregular';
+/*, Arial, sans-serif;*/
     font-size: 14pt;
 }
 
@@ -89,7 +92,7 @@ div.menu{
 }
 
 div.menuspacer{
-    padding-top: .2vw;
+    padding-top: 0.1vw;
 }
 
 div.menuitem{
