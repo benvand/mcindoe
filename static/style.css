@@ -5,12 +5,12 @@ vm + vmin included for cross browser compatability (looking at you IE)
 Page should scale to browser size, especially when vh vmin vmax (viewport size) is adopted by all
 */
 
+
 /*Generic*/
 * {
     font-family: "Avantgarde";
     font-family: "Arial";
-    font-size: 1vm;
-    font-size: 1vmin;
+    font-size: 14pt;
 }
 
 
@@ -60,59 +60,120 @@ h4 {
 h5 {
     margin-top: 1vh;
     font-weight:normal;
-    font-size: 2vm;
-    font-size: 2vmin;
+}
+
+/*links*/
+a {
+    color: black;
+    text-decoration: none;
+    border:0;
+    padding-top: 0;
+    page-break-before: avoid;
+    vertical-align: top;
+    top: 0;
+    margin:0;
+}
+
+
+/*menus*/
+div.menu{
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    top: -12vw;
+    left: 0.5vw;
+    width: 30vw;
+    height: 1.8vw;
+    display: block;
+}
+
+div.menuspacer{
+    padding-top: .2vw;
+}
+
+div.menuitem{
+    float:left;
+}
+
+div.topmenuitem{
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+/*logos*/
+img.logo{
+    max-width:100%;
+    max-height:100%;
+}
+div.logo{
+    position: relative;
+    width: 45vw;
+    height: auto;
 }
 
 
 
 /* Divs */
 
-/*#ComingSoon {*/
-    /*position: absolute;*/
-/*}*/
+div.center{
+    align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+div.container{
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    height: auto;
+    }
+
+div.infocontainer{
+    width: 45vw;
+    overflow: auto;
+}
+
+div.center_under{
+    position: relative;
+    text-align: center;
+}
+
+div.center_bottom{
+    position: absolute;
+    /*bottom: 0px;*/
+    width: inherit;
+    text-align: center;
+}
+
+div.bottom{
+    width: 50%;
+    margin:0 auto;
+    text-align: center;
+}
 
 /*footer*/
 footer {
-    /*text-align:center;*/
     display: block;
     position:fixed;
-    /*left:50vw;*/
-    /*right:50vw;*/
-    /*align:middle;*/
     width: 100vw;
     bottom:0px;
     margin-left: auto;
     margin-right: auto;
-    /*right:auto;*/
-    /*height:7vm;*/
-    /*width:auto;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
 }
 
-
 /* Social Media Icons */
-
-/*.SocMed {*/
-    /*position: absolute;*/
-/*}*/
+/*SocMed */
 
 img.socMed {
-    height: 7vmin;
-    width: 7vmin;
-    width: 7vmin;
-    height: 7vm;
+    width: 4vw;
+    height: auto;
 }
 
 img.socMedVert {
-    height: 7vmin;
-    width: 7vmin;
-    width: 7vmin;
-    height: 7vm;
+    width: 4vw;
+    height: auto;
 }
-
 
 /* Generic Helpers */
 .capitalize{
@@ -123,15 +184,18 @@ img.socMedVert {
     text-align:center;
 }
 
+/*images*/
+
 img.center{
+    align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 img.toucan{
     margin-bottom: 0px;
-
 }
 
 img.agcb{
@@ -140,27 +204,6 @@ img.agcb{
     left: -95px;
     width: 600px;
     height: 39px;
-}
-
-div.center{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-div.container{
-    position: relative;
-    top: -40px;
-    background-color: white;
-    border: 1px solid black;
-    width: 804px;
-    height: auto;
-    }
-
-div.infocontainer{
-    height: 50vh;
-    overflow: auto;
-
 }
 
 /*jcoverflip */
