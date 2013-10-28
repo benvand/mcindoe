@@ -53,6 +53,7 @@ if settings.FASTPROD:
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',include('blog.fastprod')),)
     urlpatterns += patterns('', url('^gallery/',include('gallery.fastprod')),)
+    urlpatterns += patterns('', url('^collection/',include('gallery.fastprod')),)
     urlpatterns += patterns('', url('^about/',include('about.fastprod')),)
 #admin
 

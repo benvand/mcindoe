@@ -1,11 +1,12 @@
 {% extends "base_mcindoe.html" %}
 {% block container %}
 {% load staticfiles %}
+
 <div class="container infocontainer center" >
 
+    {% block content %}{% endblock %}
+    {% include 'socmed.html' %}
 
-{% block content %}{% endblock %}
-
-{% include 'socmed.html' %}
 </div>
+
 {% endblock %}

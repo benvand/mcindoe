@@ -10,9 +10,13 @@
 
     {% block header %}{% include 'header_mcindoe.html' %}{% endblock %}
 
-    <img class="center toucan" src="{% static 'img/ToucanMcindoeTransparent.png' %}" alt='title' />
-    {% include 'agcb.html' %}
-
+    <div class="logo center">
+        <a href="http://mcindoedesign.com">
+{#            MAKE THE ABOVE THE SITE NAME variable#}
+            <img class="center toucan logo" src="{% static 'img/touse/logo.png' %}" alt='logo'  />
+        </a>
+    {% include 'menus/top.html' %}
+    </div>
     {% block container %}{% endblock %}
 
 
