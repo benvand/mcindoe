@@ -42,6 +42,7 @@ if settings.DEV:
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     # urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
     urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+    urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
 

@@ -1,3 +1,4 @@
+@import url('normalize.css');
 /*
 Notes:
 Style design BenjaminVandersteen@gmail.com Aug 2013
@@ -218,3 +219,6 @@ img.agcb{
     position: absolute;
     display: block;
     }
+
+
+

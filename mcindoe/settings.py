@@ -7,7 +7,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
 
 DEV = DEBUG =  True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
-FASTPROD=True
+FASTPROD=False
 #DEV = DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

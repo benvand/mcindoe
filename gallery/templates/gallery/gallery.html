@@ -1,13 +1,29 @@
 {% extends "base_mcindoe.html" %}
 {% load staticfiles %}
 
+{% block head %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="{% static 'gallery/galleria/galleria-1.3.1.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'gallery/gallery.css' %}" />
+
+{% endblock head %}
+
 {% block container %}
-<content>
+{% block content %}
 
+<div class="container infocontainer center">
+    <div id="galleria" class="center">
 
-    <div class="container center">
-        {% include 'gallery/slideshow.html' %}
+        <img src={% static 'gallery/GalleryImages/1.jpg' %}>
+        <img src={% static 'gallery/GalleryImages/2.jpg' %}>
+        <img src={% static 'gallery/GalleryImages/3.jpg' %}>
     </div>
-</content>
+    <script>
+        Galleria.loadTheme("{% static 'gallery/galleria/themes/bv/galleria.bv.min.js' %}");
+        Galleria.run('#galleria');
+    </script>
+</div>
 
-{% endblock %}
+{% endblock content %}
+{% endblock container %}
+

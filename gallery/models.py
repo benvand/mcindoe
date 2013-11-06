@@ -7,7 +7,7 @@ User = get_user_model()
 
 class Picture(models.Model):
     title =             models.CharField(max_length=255, blank=True)
-    picture =           models.ImageField(upload_to='gallery/static/pics')
+    picture =           models.ImageField(upload_to='gallery/static/gallery/GalleryImages')
     description =       models.TextField(blank=True) 
     created =           models.TimeField(auto_now_add=True)
     modified =          models.TimeField(auto_now=True)

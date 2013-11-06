@@ -5,14 +5,15 @@
 <html>
 <head>
     {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'fonts/fonts.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
-    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> <!-- CDN-->
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script> <!-- CDN-->
     <script type='text/javascript' src="{% static 'scripts.js' %}"></script>
     <link rel="shortcut icon" href="{% static 'img/LlamaFavicon.png' %}" />
     <link rel="icon" type="image/png" href="{% static 'img/LlamaFavicon.png' %}" />
     <title>{{ global_site.name }}</title>
+    {% block head %} {% endblock %} <!-- Allow extensions to head in app specific templates -->
+
 </head>
 
 {% block sitespec %}
