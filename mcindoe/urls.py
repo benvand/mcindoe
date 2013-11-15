@@ -22,11 +22,7 @@ urlpatterns = patterns('',
 
 #admin
 
-urlpatterns += patterns('',
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^maddyonly/', include(admin.site.urls)),
-    )
+
 
 #Stuff to serve static admin content
 urlpatterns += patterns('',
@@ -86,6 +82,12 @@ urlpatterns += staticfiles_urlpatterns()
 urlpatterns += patterns('', url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
     'document_root': settings.MEDIA_ROOT,}))
 
+#admin
+urlpatterns += patterns('',
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^maddyonly/', include(admin.site.urls)),
+    )
 
 #Error Pages
 if not settings.DEV:
