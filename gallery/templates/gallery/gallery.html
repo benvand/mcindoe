@@ -22,11 +22,11 @@
 {#{% endfor %}#}
 
     <div id="galleria" class="center">
-{#        {% for i in pictures %}#}
-{#            <img src="{{ i.picture.url }}" />#}
-{#        {% endfor %}#}
-        <img src='http://192.168.1.119/media/gallery/GalleryImages/3.jpg'>
-        <img src='http://192.168.1.119/media/gallery/GalleryImages/3.jpg'>
+        {% for i in pictures %}
+            <img src="{{ i.picture.url }}" />
+        {% endfor %}
+{#        <img src='http://192.168.1.119/media/gallery/GalleryImages/3.jpg'>#}
+{#        <img src='http://192.168.1.119/media/gallery/GalleryImages/3.jpg'>#}
 {#        <img src={% static 'gallery/GalleryImages/3.jpg' %}>#}
 {#            <img src={% static "gallery/GalleryImages/4.jpg" %}>#}
 {#            <img src="static/gallery/static/gallery/GalleryImages/4.jpg">#}
