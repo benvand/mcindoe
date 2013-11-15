@@ -6,7 +6,7 @@ BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
 
-DEV = DEBUG =  True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
+DEV = DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
 FASTPROD=False
 #DEV = DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -58,12 +58,12 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = 'media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -138,19 +138,18 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-
     'gunicorn',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'justdifferentsites',
     'south',
+    'justdifferentsites',
     'about',
     'blog',
     'contact',
-    'gallery',
-)
+    'gallery',)
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

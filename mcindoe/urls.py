@@ -24,7 +24,8 @@ urlpatterns = patterns('',
 urlpatterns += patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^maddyonly/', include(admin.site.urls)),)
+    url(r'^maddyonly/', include(admin.site.urls)),
+    )
 
 #Stuff to serve static admin content
 urlpatterns += patterns('',
@@ -40,7 +41,7 @@ urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 #Apps
 if settings.DEV:
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
-    # urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
+    urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
     urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^about/',include('about.urls')),)
@@ -56,17 +57,15 @@ if settings.FASTPROD:
     urlpatterns += patterns('', url('^gallery/',include('gallery.fastprod')),)
     urlpatterns += patterns('', url('^collection/',include('gallery.fastprod')),)
     urlpatterns += patterns('', url('^about/',include('about.fastprod')),)
-#admin
-
-    urlpatterns += patterns('',
-        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-        url(r'^admin/', include(admin.site.urls)),
-        url(r'^maddyonly/', include(admin.site.urls)),)
 
 #static 
-    urlpatterns += patterns('',
+urlpatterns += patterns('',
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),)
-    urlpatterns += staticfiles_urlpatterns()
+urlpatterns += staticfiles_urlpatterns()
+
+#media
+urlpatterns += patterns('', url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+    'document_root': settings.MEDIA_ROOT,}))
 
 
 #Error Pages

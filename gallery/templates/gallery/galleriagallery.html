@@ -1,0 +1,26 @@
+
+{##}
+{#{% load staticfiles %}#}
+{##}
+{##}
+{##}
+{##}
+{#{% block content %}#}
+{##}
+{#    <script>#}
+{#        $("body").text("jQuery works");#}
+{#        if (Galleria) { $("body").text('Galleria works') }#}
+{##}
+{#    </script>#}
+{#    <div id="galleria">#}
+{#        <img src={% static 'gallery/GalleryImages/1.jpg' %}>#}
+{#        <img src={% static 'gallery/GalleryImages/2.jpg' %}>#}
+{#        <img src={% static 'gallery/GalleryImages/3.jpg' %}>#}
+{##}
+{#    </div>#}
+{#    <script>#}
+{#        Galleria.loadTheme({% static 'gallery/galleria/galleria/themes/classic/galleria.classic.min.js' %});#}
+{#        Galleria.run('#galleria');#}
+{#    </script>#}
+{##}
+{#{% endblock %}#}

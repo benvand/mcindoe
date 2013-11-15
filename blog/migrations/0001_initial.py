@@ -13,7 +13,6 @@ class Migration(SchemaMigration):
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('content', self.gf('django.db.models.fields.TextField')()),
-            ('picture', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
             ('created', self.gf('django.db.models.fields.TimeField')(auto_now_add=True, blank=True)),
             ('modified', self.gf('django.db.models.fields.TimeField')(auto_now=True, blank=True)),
             ('userid', self.gf('django.db.models.fields.related.ForeignKey')(related_name='userblogpost', to=orm['auth.User'])),
@@ -30,6 +29,14 @@ class Migration(SchemaMigration):
             ('postid', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['blog.Post'])),
         ))
         db.send_create_signal(u'blog', ['Comment'])
+
+        # Adding model 'PostPicture'
+        db.create_table(u'blog_postpicture', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('picture', self.gf('django.db.models.fields.files.ImageField')(max_length=100, blank=True)),
+            ('postid', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['blog.Post'])),
+        ))
+        db.send_create_signal(u'blog', ['PostPicture'])
 
         # Adding model 'BlogOptions'
         db.create_table(u'blog_blogoptions', (
@@ -48,6 +55,9 @@ class Migration(SchemaMigration):
 
         # Deleting model 'Comment'
         db.delete_table(u'blog_comment')
+
+        # Deleting model 'PostPicture'
+        db.delete_table(u'blog_postpicture')
 
         # Deleting model 'BlogOptions'
         db.delete_table(u'blog_blogoptions')
@@ -106,9 +116,14 @@ class Migration(SchemaMigration):
             'created': ('django.db.models.fields.TimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'modified': ('django.db.models.fields.TimeField', [], {'auto_now': 'True', 'blank': 'True'}),
-            'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'userid': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'userblogpost'", 'to': u"orm['auth.User']"})
+        },
+        u'blog.postpicture': {
+            'Meta': {'object_name': 'PostPicture'},
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'picture': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
+            'postid': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['blog.Post']"})
         },
         u'contenttypes.contenttype': {
             'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
@@ -122,6 +137,7 @@ class Migration(SchemaMigration):
             'backgroundImage1': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'backgroundImage2': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             'domain': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
             'favicon': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),

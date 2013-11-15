@@ -12,11 +12,25 @@
 {% block content %}
 
 <div class="container infocontainer center">
-    <div id="galleria" class="center">
 
-        <img src={% static 'gallery/GalleryImages/1.jpg' %}>
-        <img src={% static 'gallery/GalleryImages/2.jpg' %}>
-        <img src={% static 'gallery/GalleryImages/3.jpg' %}>
+
+{##}
+{#{% for i in pictures %}#}
+{#<p>{{ i.picture.url }}</p>#}
+{##}
+{#<img src="{{ i.picture.url }}" />#}
+{#{% endfor %}#}
+
+    <div id="galleria" class="center">
+{#        {% for i in pictures %}#}
+{#            <img src="{{ i.picture.url }}" />#}
+{#        {% endfor %}#}
+        <img src='http://192.168.1.119/media/gallery/GalleryImages/3.jpg'>
+        <img src='http://192.168.1.119/media/gallery/GalleryImages/3.jpg'>
+{#        <img src={% static 'gallery/GalleryImages/3.jpg' %}>#}
+{#            <img src={% static "gallery/GalleryImages/4.jpg" %}>#}
+{#            <img src="static/gallery/static/gallery/GalleryImages/4.jpg">#}
+
     </div>
     <script>
         Galleria.loadTheme("{% static 'gallery/galleria/themes/bv/galleria.bv.min.js' %}");
