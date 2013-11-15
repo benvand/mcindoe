@@ -10,7 +10,7 @@ class AboutOptions(models.Model):
     intro = models.TextField(max_length=1000,blank=True)
     maintext = models.TextField(max_length=1000,blank=True)
     outro = models.TextField(max_length=1000,blank=True)
-    backgroundImage = models.ImageField(upload_to='static', blank=True)
+    backgroundImage = models.ImageField(upload_to='about', blank=True)
 
     class Meta:
         verbose_name = 'About Page Options'

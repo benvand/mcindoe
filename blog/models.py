@@ -35,7 +35,7 @@ class Comment(models.Model):
         verbose_name_plural = 'Blog Comments'
 
 class PostPicture(models.Model):
-    picture =           models.ImageField(upload_to='blog/static/post_pics', blank=True)
+    picture =           models.ImageField(upload_to='blog/post_pics', blank=True)
     postid =            models.ForeignKey('Post')
 
 
@@ -44,7 +44,7 @@ class BlogOptions(models.Model):
     site = models.OneToOneField(Site)
     title = models.CharField(max_length=200,blank=True)
     intro = models.TextField(max_length=1000,blank=True)
-    backgroundImage = models.ImageField(upload_to='static', blank=True)
+    backgroundImage = models.ImageField(upload_to='blog/', blank=True)
 
     class Meta:
         verbose_name = 'Blog Page Options'
