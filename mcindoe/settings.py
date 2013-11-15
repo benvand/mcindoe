@@ -8,7 +8,8 @@ SITE_ID = 1
 
 DEV = DEBUG = TEMPLATE_DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
 FASTPROD=False
-PROD= False if FASTPROD or DEV else True
+STAGEDPROD=True
+PROD= False if STAGEDPROD or FASTPROD or DEV else True
 
 ADMINS = (
     ('ben','benjaminfvandersteen@gmail.com'),

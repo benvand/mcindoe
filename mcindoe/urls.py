@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import views
+from django.views.generic import RedirectView
 
 #Admin
 
@@ -50,7 +51,7 @@ if settings.DEV:
 #FastProd
 if settings.FASTPROD:
 
-    from django.views.generic import RedirectView
+
     urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',include('blog.fastprod')),)
@@ -67,6 +68,13 @@ if settings.PROD:
     urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
 
+if settings.STAGEDPROD:
+    urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
+    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+    urlpatterns += patterns('', url('^blog/',RedirectView.as_view(url='/contact/')),)
+    urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+    urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
+    urlpatterns += patterns('', url('^about/',RedirectView.as_view(url='/contact/')),)
 
 
 #static 
