@@ -6,10 +6,9 @@ BASE_DIR = os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_ID = 1
 
-DEV = DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
+DEV = DEBUG = TEMPLATE_DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
 FASTPROD=False
-#DEV = DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+PROD= False if FASTPROD or DEV else True
 
 ADMINS = (
     ('ben','benjaminfvandersteen@gmail.com'),

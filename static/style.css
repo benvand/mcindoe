@@ -20,11 +20,12 @@ Page should scale to browser size, especially when vh vmin vmax (viewport size) 
 
 /*Body*/
 body {
-    background: no-repeat center center fixed ;
-    background-size: cover ;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+
+    background: center center fixed ;
+    background-size: 100%;
 }
 
 
