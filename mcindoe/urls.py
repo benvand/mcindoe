@@ -58,6 +58,17 @@ if settings.FASTPROD:
     urlpatterns += patterns('', url('^collection/',include('gallery.fastprod')),)
     urlpatterns += patterns('', url('^about/',include('about.fastprod')),)
 
+#Prod
+if settings.PROD:
+    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+    urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
+    urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+    urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
+    urlpatterns += patterns('', url('^about/',include('about.urls')),)
+
+
+
+
 #static 
 urlpatterns += patterns('',
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),)
