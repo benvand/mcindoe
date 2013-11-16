@@ -104,6 +104,10 @@ div.topmenuitem{
     font-size: 1.2vw;
     text-align: center;
 }
+div.topmenuitem:hover{
+    font-size: 1.25vw;
+}
+
 
 /*logos*/
 img.logo{
