@@ -178,6 +178,9 @@ img.socMed {
     width: 4vw;
     height: auto;
 }
+img.socMed:hover {
+    opacity:0.8;
+}
 
 img.socMedVert {
     width: 4vw;
