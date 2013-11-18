@@ -12,7 +12,8 @@ class Picture(models.Model):
     created =           models.TimeField(auto_now_add=True)
     modified =          models.TimeField(auto_now=True)
     userid =            models.ForeignKey(User, related_name='usergallerypicture')
-
+    def __unicode__(self):
+        return self.title
     class Meta():
         ordering = ('created',)
         get_latest_by = ('created',)
