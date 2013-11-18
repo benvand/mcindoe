@@ -6,28 +6,27 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import views
 from django.views.generic import RedirectView
 
+
+#Don't put them here. Make sections and append
+urlpatterns = patterns('',)
+
 #Admin
-
-
 admin.autodiscover()
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'mcindoe.views.home', name='home'),
-    # url(r'^mcindoe/', include('mcindoe.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-
-)
-
-
-#admin
-
-
+urlpatterns += patterns('',
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^maddyonly/', include(admin.site.urls)),
+    )
 
 #Stuff to serve static admin content
 urlpatterns += patterns('',
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),)
 urlpatterns += staticfiles_urlpatterns()
+
+
+
+
 
 
 #comingsoon
@@ -36,6 +35,8 @@ urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 
 
 #Apps
+
+#Dev only. Implicit on development machines
 if settings.DEV:
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
@@ -43,11 +44,8 @@ if settings.DEV:
     urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
-
-#FastProd
-if settings.FASTPROD:
-
-
+#FastProd. Hacked as beta release solution
+elif settings.FASTPROD:
     urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',include('blog.fastprod')),)
@@ -55,16 +53,16 @@ if settings.FASTPROD:
     urlpatterns += patterns('', url('^collection/',include('gallery.fastprod')),)
     urlpatterns += patterns('', url('^about/',include('about.fastprod')),)
 
-#Prod
-if settings.PROD:
+#Prod Final structure
+elif settings.PROD:
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
     urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
-
-if settings.STAGEDPROD:
+#STAGEDPROD to release separate apps as and when ready. Rolling release
+elif settings.STAGEDPROD:
     urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',RedirectView.as_view(url='/contact/')),)
@@ -82,15 +80,7 @@ urlpatterns += staticfiles_urlpatterns()
 urlpatterns += patterns('', url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
     'document_root': settings.MEDIA_ROOT,}))
 
-#admin
-urlpatterns += patterns('',
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^maddyonly/', include(admin.site.urls)),
-    )
-
 #Error Pages
 if not settings.DEV:
-
     handler500 = views.fiveHundred
     handler404 = views.fourHundred
