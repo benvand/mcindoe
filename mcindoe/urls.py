@@ -85,4 +85,3 @@ if not settings.DEV:
     handler500 = views.fiveHundred
     handler404 = views.fourHundred
 
-print urlpatterns
