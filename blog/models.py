@@ -46,6 +46,9 @@ class BlogOptions(models.Model):
     intro = models.TextField(max_length=1000,blank=True)
     backgroundImage = models.ImageField(upload_to='blog/', blank=True)
 
+    def __unicode__(self):
+        return self.site.name.capitalize() + " Blog Page Options"
+
     class Meta:
         verbose_name = 'Blog Page Options'
         verbose_name_plural = 'Blog Page Options'

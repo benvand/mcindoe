@@ -16,6 +16,9 @@ class ContactOptions(models.Model):
     contactsignoff = models.TextField(max_length=1000, blank=True)
     backgroundImage = models.ImageField(upload_to='static', blank=True)
 
+    def __unicode__(self):
+        return self.site.name.capitalize() + " Contact Page Options"
+
     class Meta:
         verbose_name = 'Contact Page Option'
         verbose_name_plural = 'Contact Page Options'

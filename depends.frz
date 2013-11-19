@@ -106,3 +106,4 @@ xdiagnose==2.5.3
 xkit==0.0.0
 yolk==0.4.3
 zope.interface==3.6.1
+django-stdimage
