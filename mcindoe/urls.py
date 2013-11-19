@@ -84,3 +84,5 @@ urlpatterns += patterns('', url(r'^media/(?P<path>.*)$', 'django.views.static.se
 if not settings.DEV:
     handler500 = views.fiveHundred
     handler404 = views.fourHundred
+
+print urlpatterns
