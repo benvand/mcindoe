@@ -11,6 +11,10 @@ DEV = DEBUG = TEMPLATE_DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-
 FASTPROD=False
 STAGEDPROD= True if not (DEV or FASTPROD) else False #Explicit switch to be False on final deployment
 PROD= True if not (STAGEDPROD or FASTPROD or DEV) else False
+<<<<<<< HEAD
+=======
+
+>>>>>>> 34826393a72630368c90ffade7cf62890bb3807a
 ADMINS = (
     ('ben','benjaminfvandersteen@gmail.com'),
     # ('Your Name', 'your_email@example.com'),

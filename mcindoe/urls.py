@@ -24,11 +24,6 @@ urlpatterns += patterns('',
     (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),)
 urlpatterns += staticfiles_urlpatterns()
 
-
-
-
-
-
 #comingsoon
 urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 
@@ -85,4 +80,3 @@ if not settings.DEV:
     handler500 = views.fiveHundred
     handler404 = views.fourHundred
 
-print urlpatterns
