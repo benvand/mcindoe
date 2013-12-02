@@ -8,10 +8,11 @@ SITE_ID = 1
 
 #these are used to determine the url patterns in the mcindoe/urls.py
 DEV = DEBUG = TEMPLATE_DEBUG = True if os.uname()[1] in ['ben-virtualbox', 'ben-ubuntu-workdesktop'] else False
+
 FASTPROD=False
 STAGEDPROD= True if not (DEV or FASTPROD) else False #Explicit switch to be False on final deployment
 PROD= True if not (STAGEDPROD or FASTPROD or DEV) else False
-
+print DEV ,FASTPROD ,STAGEDPROD,  PROD
 ADMINS = (
     ('ben','benjaminfvandersteen@gmail.com'),
     # ('Your Name', 'your_email@example.com'),
@@ -119,6 +120,12 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+#Pass request to view.
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
 )
 
 ROOT_URLCONF = 'mcindoe.urls'

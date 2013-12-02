@@ -25,7 +25,7 @@ urlpatterns += patterns('',
 urlpatterns += staticfiles_urlpatterns()
 
 #comingsoon
-urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
+#urlpatterns += patterns('', url( '^$', views.comingSoon, name='ComingSoon' ))
 
 
 
@@ -58,7 +58,7 @@ elif settings.PROD:
 
 #STAGEDPROD to release separate apps as and when ready. Rolling release
 elif settings.STAGEDPROD:
-#    urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
+    urlpatterns += patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',RedirectView.as_view(url='/contact/')),)
     urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
