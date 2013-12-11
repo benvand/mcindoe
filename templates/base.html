@@ -7,8 +7,6 @@
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'fonts/fonts.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
-    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script> <!-- CDN-->
-    <script type='text/javascript' src="{% static 'scripts.js' %}"></script>
     <link rel="shortcut icon" href="{% static 'img/LlamaFavicon.png' %}" />
     <link rel="icon" type="image/png" href="{% static 'img/LlamaFavicon.png' %}" />
     <title>{{ global_site.name }}</title>
@@ -16,11 +14,17 @@
 
 </head>
 
+<body style="background-image:url( {% static "img/wtrans-small.png" %} )">
+
 {% block sitespec %}
     <!-- overwrite me with a body -->
 {% endblock %}
 
 
+
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script> <!-- CDN-->
+    <script type='text/javascript' src="{% static 'scripts.js' %}"></script>
+</body>
 
 <!--Social media icon set from http://www.brainleaf.eu/-->
 <!--Page design BenjaminVandersteen@gmail.com Aug 2013-->
