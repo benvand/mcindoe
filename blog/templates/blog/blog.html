@@ -10,12 +10,23 @@
 <content>
 
 <p>
-<h3>Here's the blog page</h3>
-<h4>{{ blog.intro }}</h4>
-
-
-
-
+    <h3>Blog:</h3>
 </p>
+<p>
+    <h5>{{ blog.intro }}</h5>
+</p>
+
+
+{% for i in posts %}
+    <p>{{ i.created|date:"l, F d, o"}}</p>
+    <b>{{ i.title }}</b>
+    <p>{{ i.content }}</p>
+    <p>Posted by {{ i.userid|capfirst }} at {{ i.created|time:"H:i" }}</p>
+{% endfor %}
+
+
+
+
+
 </content>
 {% endblock %}
