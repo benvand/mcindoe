@@ -41,7 +41,7 @@ if settings.DEV:
 
 #FastProd. Hacked as beta release solution
 elif settings.FASTPROD:
-    urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
+    urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/collection/')),)
     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
     urlpatterns += patterns('', url('^blog/',include('blog.fastprod')),)
     urlpatterns += patterns('', url('^gallery/',include('gallery.fastprod')),)
