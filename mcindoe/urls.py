@@ -31,39 +31,39 @@ urlpatterns += staticfiles_urlpatterns()
 
 #Apps
 
-#Dev only. Implicit on development machines
-if settings.DEV:
-    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
-    urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
-    urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
-    urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
-    urlpatterns += patterns('', url('^about/',include('about.urls')),)
-
-#FastProd. Hacked as beta release solution
-elif settings.FASTPROD:
-    urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
-    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
-    urlpatterns += patterns('', url('^blog/',include('blog.fastprod')),)
-    urlpatterns += patterns('', url('^gallery/',include('gallery.fastprod')),)
-    urlpatterns += patterns('', url('^collection/',include('gallery.fastprod')),)
-    urlpatterns += patterns('', url('^about/',include('about.fastprod')),)
-
-#Prod Final structure
-elif settings.PROD:
-    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
-    urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
-    urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
-    urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
-    urlpatterns += patterns('', url('^about/',include('about.urls')),)
-
-#STAGEDPROD to release separate apps as and when ready. Rolling release
-elif settings.STAGEDPROD:
-    urlpatterns += patterns('', (r'^$', RedirectView.as_view(url='/collection/')),)
-    urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
-    urlpatterns += patterns('', url('^blog/',RedirectView.as_view(url='/contact/')),)
-    urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
-    urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
-    urlpatterns += patterns('', url('^about/',include('about.urls')),)
+# #Dev only. Implicit on development machines
+# if settings.DEV:
+#     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+#     urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
+#     urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+#     urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
+#     urlpatterns += patterns('', url('^about/',include('about.urls')),)
+#
+# #FastProd. Hacked as beta release solution
+# elif settings.FASTPROD:
+#     urlpatterns = patterns('', (r'^$', RedirectView.as_view(url='/contact/')),)
+#     urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+#     urlpatterns += patterns('', url('^blog/',include('blog.fastprod')),)
+#     urlpatterns += patterns('', url('^gallery/',include('gallery.fastprod')),)
+#     urlpatterns += patterns('', url('^collection/',include('gallery.fastprod')),)
+#     urlpatterns += patterns('', url('^about/',include('about.fastprod')),)
+#
+# #Prod Final structure
+# elif settings.PROD:
+# urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+# urlpatterns += patterns('', url('^blog/',include('blog.urls')),)
+# urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+# urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
+# urlpatterns += patterns('', url('^about/',include('about.urls')),)
+#
+# #STAGEDPROD to release separate apps as and when ready. Rolling release
+# elif settings.STAGEDPROD:
+urlpatterns += patterns('', (r'^$', RedirectView.as_view(url='/collection/')),)
+urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
+urlpatterns += patterns('', url('^blog/',RedirectView.as_view(url='/contact/')),)
+urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
+urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
+urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
 
 #static 
