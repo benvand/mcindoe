@@ -58,6 +58,7 @@ urlpatterns += staticfiles_urlpatterns()
 #
 # #STAGEDPROD to release separate apps as and when ready. Rolling release
 # elif settings.STAGEDPROD:
+
 urlpatterns += patterns('', (r'^$', RedirectView.as_view(url='/collection/')),)
 urlpatterns += patterns('', url('^contact/',include('contact.urls')),)
 urlpatterns += patterns('', url('^blog/',RedirectView.as_view(url='/contact/')),)
