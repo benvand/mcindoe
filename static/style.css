@@ -82,7 +82,7 @@ a {
 /*menus*/
 div.menu{
     background-color: white;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     position: relative;
     top: -12vw;
     left: 0.5vw;
@@ -133,7 +133,7 @@ div.center{
 div.container{
     position: relative;
     background-color: white;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     height: auto;
     }
 
