@@ -63,7 +63,7 @@ elif settings.STAGEDPROD:
     urlpatterns += patterns('', url('^blog/',RedirectView.as_view(url='/contact/')),)
     urlpatterns += patterns('', url('^gallery/',include('gallery.urls')),)
     urlpatterns += patterns('', url('^collection/',include('gallery.urls')),)
-    urlpatterns += patterns('', url('^about/',RedirectView.as_view(url='/contact/')),)
+    urlpatterns += patterns('', url('^about/',include('about.urls')),)
 
 
 #static 
